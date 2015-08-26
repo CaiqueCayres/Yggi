@@ -40,6 +40,9 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate {
             println("Vai curintia!")
         })
         
+        ParseManager.findQuestions({ () -> Void in
+            println("festa")
+        } )
         
     }
     
@@ -61,6 +64,7 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate {
         degreeTextField.becomeFirstResponder()
         ageTextField.becomeFirstResponder()
         emailTextField.becomeFirstResponder()
+        
         // Do any additional setup after loading the view.
     }
 

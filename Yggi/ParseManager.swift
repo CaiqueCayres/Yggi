@@ -60,7 +60,7 @@ class ParseManager: NSObject {
     
     class func addQuestion(newQuestion : Questions ,  completion: ()-> Void){
         
-        var question = PFObject(className: "Question")
+        var question = PFObject(className: "question")
         
         question["createdBy"] = PFUser.currentUser()
         question["picture"] = newQuestion.questionImageData
@@ -82,7 +82,7 @@ class ParseManager: NSObject {
     }
     
     
-    class func findQuestions(completion: ()-> [Questions]){
+    class func findQuestions(completion: ()-> Void){
     
     let query = PFQuery(className: "Question")
         query.whereKey("finished", equalTo: false)
