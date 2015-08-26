@@ -65,24 +65,41 @@ class ParseManager: NSObject {
         question["createdBy"] = PFUser.currentUser()
         question["picture"] = newQuestion.questionImageData
         question["description"] = newQuestion.questionDescription
-        question.saveInBackgroundWithBlock {
+        question.saveInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
             
-            (success: Bool, error: NSError?) -> Void in
             if (success) {
                 
                println("Questao salva")
                 
             } else {
                 
-                
+                println(error!.userInfo?["error"] as? NSString)
+
             }
         }
         
-        
+        completion()
     }
     
-
     
+    class func findQuestions(completion: ()-> [Questions]){
+    
+    let query = PFQuery(className: "Question")
+        query.whereKey("finished", equalTo: false)
+        query.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error == nil{
+                
+                println(objects)
+                
+                
+                
+            }
+            }
+)
+        
+
+    }
     
 
 
