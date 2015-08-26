@@ -23,7 +23,6 @@ class ParseManager: NSObject {
         user["gender"] =  newUser.gender
         user["type"] =  newUser.type
         
-        
         user.signUpInBackgroundWithBlock {(succeeded: Bool, error: NSError?) -> Void in
 
             if let error = error {
