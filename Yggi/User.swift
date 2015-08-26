@@ -10,11 +10,12 @@ import UIKit
 
 class User: NSObject {
     
-    let name = String()
-    let password = String()
-    let email = String()
-    let age = Int()
-    let gender = Int()
-    let type = Int()
+    var name = String()
+    var password = String()
+    var email = String()
+    var age = Int()
+    var gender = Int()
+    var type = Int()
+    var college = String()
     
 }

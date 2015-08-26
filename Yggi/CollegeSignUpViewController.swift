@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollegeSignUpViewController: UIViewController {
+class CollegeSignUpViewController: UIViewController, UITextFieldDelegate {
 //TextField com o nome
     @IBOutlet weak var nameTextField: UITextField!
 //TextField com a universidade
@@ -21,9 +21,46 @@ class CollegeSignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     
+    @IBAction func signUpAction(sender: AnyObject) {
+        nameTextField.resignFirstResponder()
+        collegeTextField.resignFirstResponder()
+        degreeTextField.resignFirstResponder()
+        ageTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        
+        var newRegistratingUser = User()
+        newRegistratingUser.name = nameTextField.text
+        newRegistratingUser.password = "sidney"
+        newRegistratingUser.email = emailTextField.text
+        newRegistratingUser.age = ageTextField.text.toInt()!
+        newRegistratingUser.gender = 1
+        newRegistratingUser.college = collegeTextField.text
+        
+        ParseManager.addNewUser(newRegistratingUser, completion: { () -> Void in
+            println("Vai curintia!")
+        })
+        
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        collegeTextField.resignFirstResponder()
+        degreeTextField.resignFirstResponder()
+        ageTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        
+        
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameTextField.becomeFirstResponder()
+        collegeTextField.becomeFirstResponder()
+        degreeTextField.becomeFirstResponder()
+        ageTextField.becomeFirstResponder()
+        emailTextField.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
 

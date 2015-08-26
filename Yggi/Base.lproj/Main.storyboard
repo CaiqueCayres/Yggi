@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5y-2f-QfT">
-                                <rect key="frame" x="257.5" y="172.5" width="85" height="30"/>
+                                <rect key="frame" x="257" y="172" width="85" height="30"/>
                                 <state key="normal" title="Universitária">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAT-lU-7Bc">
-                                <rect key="frame" x="257" y="354" width="99" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAT-lU-7Bc">
+                                <rect key="frame" x="250.5" y="360" width="99" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NZj-Sx-TRu"/>
                                     <constraint firstAttribute="width" constant="99" id="arC-xK-Bxv"/>
@@ -108,6 +108,9 @@
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpAction:" destination="kaX-VG-XJU" eventType="touchUpInside" id="sjP-SK-hMz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
