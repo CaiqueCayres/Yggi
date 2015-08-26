@@ -60,15 +60,23 @@ class ParseManager: NSObject {
     
     class func addQuestion(newQuestion : Questions ,  completion: ()-> Void){
         
-        
         var question = PFObject(className: "Question")
         
         question["createdBy"] = PFUser.currentUser()
         question["picture"] = newQuestion.questionImageData
-        
-        
-        
-        
+        question["description"] = newQuestion.questionDescription
+        question.saveInBackgroundWithBlock {
+            
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                
+               println("Questao salva")
+                
+            } else {
+                
+                
+            }
+        }
         
         
     }
