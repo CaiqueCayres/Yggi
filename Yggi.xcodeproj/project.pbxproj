@@ -35,6 +35,7 @@
 		C040115E1B8D001F00CBD943 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C040115D1B8D001F00CBD943 /* Questions.swift */; };
 		C04011611B8D02E700CBD943 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04011601B8D02E700CBD943 /* ParseManager.swift */; };
 		C04B4B7F1B8E1E2700F907F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B4B7E1B8E1E2700F907F9 /* User.swift */; };
+		E91B566D1B8E40D0008CF47E /* CollegeSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		C040115D1B8D001F00CBD943 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		C04011601B8D02E700CBD943 /* ParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		C04B4B7E1B8E1E2700F907F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeSignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				C04011141B8CF5BF00CBD943 /* AppDelegate.swift */,
 				C04011191B8CF5BF00CBD943 /* ViewController.swift */,
 				C040111B1B8CF5BF00CBD943 /* Main.storyboard */,
+				E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */,
 				C040111E1B8CF5BF00CBD943 /* Images.xcassets */,
 				C04011201B8CF5BF00CBD943 /* LaunchScreen.xib */,
 				C04011161B8CF5BF00CBD943 /* Yggi.xcdatamodeld */,
@@ -326,6 +329,7 @@
 				C04B4B7F1B8E1E2700F907F9 /* User.swift in Sources */,
 				C040115E1B8D001F00CBD943 /* Questions.swift in Sources */,
 				C04011151B8CF5BF00CBD943 /* AppDelegate.swift in Sources */,
+				E91B566D1B8E40D0008CF47E /* CollegeSignUpViewController.swift in Sources */,
 				C04011181B8CF5BF00CBD943 /* Yggi.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

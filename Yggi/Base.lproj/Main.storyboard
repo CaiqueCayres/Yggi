@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,21 +19,153 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5y-2f-QfT">
-                                <rect key="frame" x="277" y="198" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="257.5" y="172.5" width="85" height="30"/>
+                                <state key="normal" title="Universitária">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAT-lU-7Bc">
+                                <rect key="frame" x="257" y="354" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NZj-Sx-TRu"/>
+                                    <constraint firstAttribute="width" constant="99" id="arC-xK-Bxv"/>
+                                </constraints>
+                                <state key="normal" title="Child">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kaX-VG-XJU" kind="presentation" id="tXg-Vt-b2X"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="m5y-2f-QfT" secondAttribute="centerY" constant="87" id="EBz-b9-Ofd"/>
+                            <constraint firstAttribute="centerY" secondItem="m5y-2f-QfT" secondAttribute="centerY" multiplier="1.6" id="EBz-b9-Ofd"/>
+                            <constraint firstAttribute="centerX" secondItem="VAT-lU-7Bc" secondAttribute="centerX" id="Jyi-zc-neN"/>
                             <constraint firstAttribute="centerX" secondItem="m5y-2f-QfT" secondAttribute="centerX" id="Lpe-AO-QWf"/>
+                            <constraint firstAttribute="centerY" secondItem="VAT-lU-7Bc" secondAttribute="centerY" multiplier="0.8" id="N32-Xb-Lg7"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-258" y="-153"/>
+        </scene>
+        <!--College Sign Up View Controller-->
+        <scene sceneID="Km2-I9-rSD">
+            <objects>
+                <viewController id="kaX-VG-XJU" customClass="CollegeSignUpViewController" customModule="Yggi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0wh-tG-eV5"/>
+                        <viewControllerLayoutGuide type="bottom" id="3tQ-gn-dqb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sQJ-uZ-6QH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P10-8U-gJt">
+                                <rect key="frame" x="36" y="50" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kaX-VG-XJU" id="z4R-9u-LGX"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Inst. Ensino" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fk7-Op-vyV">
+                                <rect key="frame" x="36" y="90" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kaX-VG-XJU" id="7eB-SV-rzf"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Curso" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGe-dY-LwF">
+                                <rect key="frame" x="36" y="130" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kaX-VG-XJU" id="fcW-Zn-2Us"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Epb-M8-5Ey">
+                                <rect key="frame" x="36" y="170" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kaX-VG-XJU" id="YcS-l4-W9a"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yGT-1f-3Lg">
+                                <rect key="frame" x="36" y="210" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kaX-VG-XJU" id="PBL-V0-b7n"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo6-Nb-Zga">
+                                <rect key="frame" x="282" y="250" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GGe-dY-LwF" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" constant="20" id="1a7-2L-w3Q"/>
+                            <constraint firstItem="GGe-dY-LwF" firstAttribute="width" secondItem="P10-8U-gJt" secondAttribute="width" id="24Q-9m-ZDU"/>
+                            <constraint firstItem="Mo6-Nb-Zga" firstAttribute="top" secondItem="yGT-1f-3Lg" secondAttribute="bottom" constant="10" id="3Rh-bG-moI"/>
+                            <constraint firstItem="yGT-1f-3Lg" firstAttribute="top" secondItem="Epb-M8-5Ey" secondAttribute="bottom" constant="10" id="4Fj-fO-zKj"/>
+                            <constraint firstItem="P10-8U-gJt" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" constant="20" id="8n0-Jy-3S6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fk7-Op-vyV" secondAttribute="trailing" constant="20" id="ALb-ln-OXO"/>
+                            <constraint firstAttribute="centerX" secondItem="P10-8U-gJt" secondAttribute="centerX" id="BwI-Fu-1lG"/>
+                            <constraint firstItem="Epb-M8-5Ey" firstAttribute="top" secondItem="GGe-dY-LwF" secondAttribute="bottom" constant="10" id="CvJ-dw-Cfz"/>
+                            <constraint firstItem="fk7-Op-vyV" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" constant="20" id="I9r-z9-kZm"/>
+                            <constraint firstItem="P10-8U-gJt" firstAttribute="top" secondItem="0wh-tG-eV5" secondAttribute="bottom" constant="30" id="LZ9-6z-hbt"/>
+                            <constraint firstItem="fk7-Op-vyV" firstAttribute="width" secondItem="P10-8U-gJt" secondAttribute="width" id="LfB-Rd-dRy"/>
+                            <constraint firstItem="fk7-Op-vyV" firstAttribute="top" secondItem="P10-8U-gJt" secondAttribute="bottom" constant="10" id="Msm-fY-cB6"/>
+                            <constraint firstAttribute="centerX" secondItem="GGe-dY-LwF" secondAttribute="centerX" id="QrH-XV-8Jv"/>
+                            <constraint firstAttribute="centerX" secondItem="yGT-1f-3Lg" secondAttribute="centerX" id="Rmv-BX-ifX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GGe-dY-LwF" secondAttribute="trailing" constant="20" id="T1B-tK-W64"/>
+                            <constraint firstItem="yGT-1f-3Lg" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" constant="20" id="T44-ix-osD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P10-8U-gJt" secondAttribute="trailing" constant="20" id="Yz2-KM-Mj5"/>
+                            <constraint firstItem="P10-8U-gJt" firstAttribute="width" secondItem="Epb-M8-5Ey" secondAttribute="width" id="Zfd-zH-PG5"/>
+                            <constraint firstAttribute="centerX" secondItem="Mo6-Nb-Zga" secondAttribute="centerX" id="b8e-6i-ak4"/>
+                            <constraint firstItem="yGT-1f-3Lg" firstAttribute="width" secondItem="P10-8U-gJt" secondAttribute="width" id="f6h-Zt-ifm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Epb-M8-5Ey" secondAttribute="trailing" constant="20" id="ihu-1a-0Mm"/>
+                            <constraint firstAttribute="centerX" secondItem="fk7-Op-vyV" secondAttribute="centerX" id="nLF-ib-HZn"/>
+                            <constraint firstAttribute="centerX" secondItem="Epb-M8-5Ey" secondAttribute="centerX" id="qOe-iX-4Sg"/>
+                            <constraint firstAttribute="centerY" secondItem="Mo6-Nb-Zga" secondAttribute="centerY" id="qql-7F-JEk"/>
+                            <constraint firstItem="GGe-dY-LwF" firstAttribute="top" secondItem="fk7-Op-vyV" secondAttribute="bottom" constant="10" id="t2l-Hd-o5C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yGT-1f-3Lg" secondAttribute="trailing" constant="20" id="wRG-mo-xp3"/>
+                            <constraint firstItem="Epb-M8-5Ey" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" constant="20" id="wpa-OF-Boq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BwI-Fu-1lG"/>
+                                <exclude reference="Zfd-zH-PG5"/>
+                                <exclude reference="LfB-Rd-dRy"/>
+                                <exclude reference="nLF-ib-HZn"/>
+                                <exclude reference="24Q-9m-ZDU"/>
+                                <exclude reference="QrH-XV-8Jv"/>
+                                <exclude reference="qOe-iX-4Sg"/>
+                                <exclude reference="Rmv-BX-ifX"/>
+                                <exclude reference="f6h-Zt-ifm"/>
+                                <exclude reference="qql-7F-JEk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="Epb-M8-5Ey" id="IHr-Sy-PKb"/>
+                        <outlet property="collegeTextField" destination="fk7-Op-vyV" id="SbR-HT-WWt"/>
+                        <outlet property="degreeTextField" destination="GGe-dY-LwF" id="JZv-OH-ty7"/>
+                        <outlet property="emailTextField" destination="yGT-1f-3Lg" id="Tqu-AL-At2"/>
+                        <outlet property="nameTextField" destination="P10-8U-gJt" id="PQ9-H6-Ixq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNS-XU-572" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="295"/>
         </scene>
     </scenes>
 </document>
