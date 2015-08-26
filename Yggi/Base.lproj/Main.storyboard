@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -23,6 +23,9 @@
                                 <state key="normal" title="Universitária">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="kaX-VG-XJU" kind="show" id="pdZ-Eb-ujn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAT-lU-7Bc">
                                 <rect key="frame" x="250.5" y="360" width="99" height="30"/>
@@ -34,7 +37,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kaX-VG-XJU" kind="presentation" id="tXg-Vt-b2X"/>
+                                    <segue destination="vlN-Dg-Cxz" kind="show" id="rih-Cy-CdE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,6 +53,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258" y="-153"/>
+        </scene>
+        <!--Child Sign Up View Controller-->
+        <scene sceneID="VpZ-It-K1d">
+            <objects>
+                <viewController id="vlN-Dg-Cxz" customClass="ChildSignUpViewController" customModule="Yggi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KPb-xN-Zb4"/>
+                        <viewControllerLayoutGuide type="bottom" id="qPC-ra-QZ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mct-kt-GLf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-2n-yEM">
+                                <rect key="frame" x="252" y="90" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgY-3h-byr">
+                                <rect key="frame" x="252" y="128" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Série / Ano" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ml2-gU-M71">
+                                <rect key="frame" x="252" y="166" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail da mãe ou do pai" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTv-lH-Sbe">
+                                <rect key="frame" x="252" y="204" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5I-eC-FEP">
+                                <rect key="frame" x="258" y="242" width="82" height="30"/>
+                                <state key="normal" title="cadastrar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpAction:" destination="vlN-Dg-Cxz" eventType="touchUpInside" id="EOL-mV-XM5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="age" destination="bgY-3h-byr" id="taJ-lH-vtT"/>
+                        <outlet property="email" destination="uTv-lH-Sbe" id="KZR-Ut-CN3"/>
+                        <outlet property="name" destination="sMb-2n-yEM" id="8ph-jc-1ao"/>
+                        <outlet property="serie" destination="Ml2-gU-M71" id="OLP-e1-UBI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTm-pJ-Zs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502" y="141"/>
         </scene>
         <!--College Sign Up View Controller-->
         <scene sceneID="Km2-I9-rSD">
@@ -168,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNS-XU-572" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="295"/>
+            <point key="canvasLocation" x="502" y="-593"/>
         </scene>
     </scenes>
 </document>
