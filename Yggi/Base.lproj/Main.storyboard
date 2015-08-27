@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAT-lU-7Bc">
-                                <rect key="frame" x="250.5" y="360" width="99" height="30"/>
+                                <rect key="frame" x="251" y="360" width="99" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NZj-Sx-TRu"/>
                                     <constraint firstAttribute="width" constant="99" id="arC-xK-Bxv"/>
@@ -66,28 +66,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-2n-yEM">
-                                <rect key="frame" x="252" y="90" width="183" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgY-3h-byr">
+                                <rect key="frame" x="36" y="130" width="528" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgY-3h-byr">
-                                <rect key="frame" x="252" y="128" width="183" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Série / Ano" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ml2-gU-M71">
+                                <rect key="frame" x="36" y="170" width="528" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Série / Ano" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ml2-gU-M71">
-                                <rect key="frame" x="252" y="166" width="183" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail da mãe ou do pai" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTv-lH-Sbe">
+                                <rect key="frame" x="36" y="210" width="528" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail da mãe ou do pai" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTv-lH-Sbe">
-                                <rect key="frame" x="252" y="204" width="183" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5I-eC-FEP">
-                                <rect key="frame" x="258" y="242" width="82" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5I-eC-FEP">
+                                <rect key="frame" x="267" y="250" width="65" height="30"/>
                                 <state key="normal" title="cadastrar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -95,11 +90,80 @@
                                     <action selector="signUpAction:" destination="vlN-Dg-Cxz" eventType="touchUpInside" id="EOL-mV-XM5"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-ay-ciQ">
+                                <rect key="frame" x="16" y="300" width="568" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="LOf-NZ-BTZ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jdu-AS-goy">
+                                    <size key="itemSize" width="93" height="93"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellImage" id="ujF-WR-Fqh" customClass="AvatarCellCollectionViewCell" customModule="Yggi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1dr-Ub-Nch">
+                                                    <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="1dr-Ub-Nch" firstAttribute="leading" secondItem="ujF-WR-Fqh" secondAttribute="leading" id="RlN-FF-GKT"/>
+                                            <constraint firstAttribute="trailing" secondItem="1dr-Ub-Nch" secondAttribute="trailing" id="WQ0-QS-no9"/>
+                                            <constraint firstItem="1dr-Ub-Nch" firstAttribute="top" secondItem="ujF-WR-Fqh" secondAttribute="top" id="c5y-RM-FOk"/>
+                                            <constraint firstAttribute="bottom" secondItem="1dr-Ub-Nch" secondAttribute="bottom" id="igf-P4-lc0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="avatarChoice" destination="1dr-Ub-Nch" id="I9W-G7-5SK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="10" y="344" width="380" height="75"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="vlN-Dg-Cxz" id="2T6-w7-2VG"/>
+                                    <outlet property="delegate" destination="vlN-Dg-Cxz" id="0kh-nc-OYr"/>
+                                </connections>
+                            </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-2n-yEM">
+                                <rect key="frame" x="36" y="90" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bgY-3h-byr" firstAttribute="leading" secondItem="mct-kt-GLf" secondAttribute="leadingMargin" constant="20" id="8At-2b-3wN"/>
+                            <constraint firstItem="rfd-ay-ciQ" firstAttribute="leading" secondItem="mct-kt-GLf" secondAttribute="leadingMargin" id="8eJ-nA-znz"/>
+                            <constraint firstItem="Ml2-gU-M71" firstAttribute="top" secondItem="bgY-3h-byr" secondAttribute="bottom" constant="10" id="B8R-pW-NIq"/>
+                            <constraint firstItem="bgY-3h-byr" firstAttribute="top" secondItem="sMb-2n-yEM" secondAttribute="bottom" constant="10" id="C3c-yv-qnr"/>
+                            <constraint firstItem="sMb-2n-yEM" firstAttribute="top" secondItem="KPb-xN-Zb4" secondAttribute="bottom" constant="70" id="MKP-41-Gg4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uTv-lH-Sbe" secondAttribute="trailing" constant="20" id="N6K-pf-AVr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ml2-gU-M71" secondAttribute="trailing" constant="20" id="QKT-cq-1i9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sMb-2n-yEM" secondAttribute="trailing" constant="20" id="RNn-qI-9w1"/>
+                            <constraint firstItem="f5I-eC-FEP" firstAttribute="top" secondItem="uTv-lH-Sbe" secondAttribute="bottom" constant="10" id="XTG-ru-Fhh"/>
+                            <constraint firstAttribute="centerX" secondItem="f5I-eC-FEP" secondAttribute="centerX" constant="1" id="bsG-RI-TPB"/>
+                            <constraint firstItem="sMb-2n-yEM" firstAttribute="leading" secondItem="mct-kt-GLf" secondAttribute="leadingMargin" constant="20" id="g1V-Xh-1IA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bgY-3h-byr" secondAttribute="trailing" constant="20" id="idI-mh-Nnw"/>
+                            <constraint firstItem="uTv-lH-Sbe" firstAttribute="top" secondItem="Ml2-gU-M71" secondAttribute="bottom" constant="10" id="nLk-Eh-GqV"/>
+                            <constraint firstItem="rfd-ay-ciQ" firstAttribute="trailing" secondItem="mct-kt-GLf" secondAttribute="trailingMargin" id="pis-pw-am7"/>
+                            <constraint firstItem="Ml2-gU-M71" firstAttribute="leading" secondItem="mct-kt-GLf" secondAttribute="leadingMargin" constant="20" id="q3M-WC-DPi"/>
+                            <constraint firstItem="uTv-lH-Sbe" firstAttribute="leading" secondItem="mct-kt-GLf" secondAttribute="leadingMargin" constant="20" id="rSo-1O-CLo"/>
+                            <constraint firstItem="rfd-ay-ciQ" firstAttribute="top" secondItem="f5I-eC-FEP" secondAttribute="bottom" constant="20" id="wwx-7S-Rbc"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="age" destination="bgY-3h-byr" id="taJ-lH-vtT"/>
+                        <outlet property="avatarGrid" destination="rfd-ay-ciQ" id="mtT-X4-oK8"/>
                         <outlet property="email" destination="uTv-lH-Sbe" id="KZR-Ut-CN3"/>
                         <outlet property="name" destination="sMb-2n-yEM" id="8ph-jc-1ao"/>
                         <outlet property="serie" destination="Ml2-gU-M71" id="OLP-e1-UBI"/>

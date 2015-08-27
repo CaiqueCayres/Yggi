@@ -21,6 +21,7 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
     // parent's e-mail
     @IBOutlet weak var email: UITextField!
     
+    @IBOutlet weak var avatarGrid: UICollectionView!
     
     @IBAction func signUpAction(sender: AnyObject) {
         name.resignFirstResponder()
@@ -32,13 +33,13 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
         newRegistratingUser.name = name.text
         newRegistratingUser.password = "sidney" // TODO
         newRegistratingUser.email = email.text
+        
+        //Verifica se o que foi digitado realmente é um número!
         var aux = age.text.toInt()
         if aux != nil {
             newRegistratingUser.age = age.text.toInt()!
         }
-//        if (newRegistratingUser.age) {
-       
-  //      }
+        
         newRegistratingUser.gender = 1 // TODO
         newRegistratingUser.type = 0
         newRegistratingUser.college = "teste"
@@ -73,6 +74,10 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
         serie.resignFirstResponder()
         email.becomeFirstResponder()
         
+        
+        //Setup da collection view
+        avatarGrid.backgroundColor = UIColor.greenColor()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -81,14 +86,48 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK Métodos da CollectionView
     
-    /*
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
     }
-    */
     
-}
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 11
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: UIScreen.mainScreen().bounds.width / CGFloat(6), height: UIScreen.mainScreen().bounds.width / CGFloat(6))
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 8
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cellImage: AvatarCellCollectionViewCell = self.avatarGrid.dequeueReusableCellWithReuseIdentifier("cellImage", forIndexPath: indexPath) as! AvatarCellCollectionViewCell
+        cellImage.avatarChoice.image = UIImage(named:"sidney")//named: imagens[indexPath.row])
+        
+        return cellImage
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        //        self.imagem = UIImage(named:imagens[indexPath.row])
+        //        self.imagemSelecionada.image = UIImage(named:imagens[indexPath.row])
+        //
+        //        self.myCollectionView.scrollToItemAtIndexPath( indexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
+        //        self.nivel = indexPath.row
+        //        println(self.nivel)
+        
+    }
+
+  }
