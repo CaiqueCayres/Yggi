@@ -16,7 +16,7 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var name: UITextField!
     // child's age
     @IBOutlet weak var age: UITextField!
-    // child's scholar fase
+    // child's scholar phase
     @IBOutlet weak var serie: UITextField!
     // parent's e-mail
     @IBOutlet weak var email: UITextField!
@@ -32,7 +32,13 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
         newRegistratingUser.name = name.text
         newRegistratingUser.password = "sidney" // TODO
         newRegistratingUser.email = email.text
-        newRegistratingUser.age = age.text.toInt()!
+        var aux = age.text.toInt()
+        if aux != nil {
+            newRegistratingUser.age = age.text.toInt()!
+        }
+//        if (newRegistratingUser.age) {
+       
+  //      }
         newRegistratingUser.gender = 1 // TODO
         newRegistratingUser.type = 0
         newRegistratingUser.college = "teste"

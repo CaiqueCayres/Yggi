@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -170,6 +170,50 @@
                                     <action selector="signUpAction:" destination="kaX-VG-XJU" eventType="touchUpInside" id="sjP-SK-hMz"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WKH-Lh-hWk">
+                                <rect key="frame" x="16" y="300" width="568" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="MhW-EC-rcS"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kr9-KW-TYF">
+                                    <size key="itemSize" width="93" height="93"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellImage" id="jGi-3O-TFJ" customClass="AvatarCellCollectionViewCell" customModule="Yggi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fb3-H0-Sit">
+                                                    <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fb3-H0-Sit" secondAttribute="bottom" id="FBD-um-xEh"/>
+                                            <constraint firstItem="fb3-H0-Sit" firstAttribute="leading" secondItem="jGi-3O-TFJ" secondAttribute="leading" id="HE2-eI-ae0"/>
+                                            <constraint firstItem="fb3-H0-Sit" firstAttribute="top" secondItem="jGi-3O-TFJ" secondAttribute="top" id="TcD-wU-R3C"/>
+                                            <constraint firstAttribute="trailing" secondItem="fb3-H0-Sit" secondAttribute="trailing" id="o9T-Fm-Kd5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="avatarChoice" destination="fb3-H0-Sit" id="J1W-ri-nGW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="10" y="344" width="380" height="75"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="kaX-VG-XJU" id="NZe-2R-DPH"/>
+                                    <outlet property="delegate" destination="kaX-VG-XJU" id="xlM-qp-MRO"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -181,6 +225,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fk7-Op-vyV" secondAttribute="trailing" constant="20" id="ALb-ln-OXO"/>
                             <constraint firstAttribute="centerX" secondItem="P10-8U-gJt" secondAttribute="centerX" id="BwI-Fu-1lG"/>
                             <constraint firstItem="Epb-M8-5Ey" firstAttribute="top" secondItem="GGe-dY-LwF" secondAttribute="bottom" constant="10" id="CvJ-dw-Cfz"/>
+                            <constraint firstItem="WKH-Lh-hWk" firstAttribute="top" secondItem="Mo6-Nb-Zga" secondAttribute="bottom" constant="20" id="DfJ-Ao-bnP"/>
                             <constraint firstItem="fk7-Op-vyV" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" constant="20" id="I9r-z9-kZm"/>
                             <constraint firstItem="P10-8U-gJt" firstAttribute="top" secondItem="0wh-tG-eV5" secondAttribute="bottom" constant="30" id="LZ9-6z-hbt"/>
                             <constraint firstItem="fk7-Op-vyV" firstAttribute="width" secondItem="P10-8U-gJt" secondAttribute="width" id="LfB-Rd-dRy"/>
@@ -189,11 +234,13 @@
                             <constraint firstAttribute="centerX" secondItem="yGT-1f-3Lg" secondAttribute="centerX" id="Rmv-BX-ifX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GGe-dY-LwF" secondAttribute="trailing" constant="20" id="T1B-tK-W64"/>
                             <constraint firstItem="yGT-1f-3Lg" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" constant="20" id="T44-ix-osD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WKH-Lh-hWk" secondAttribute="trailing" id="XFW-H1-Qlw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P10-8U-gJt" secondAttribute="trailing" constant="20" id="Yz2-KM-Mj5"/>
                             <constraint firstItem="P10-8U-gJt" firstAttribute="width" secondItem="Epb-M8-5Ey" secondAttribute="width" id="Zfd-zH-PG5"/>
                             <constraint firstAttribute="centerX" secondItem="Mo6-Nb-Zga" secondAttribute="centerX" id="b8e-6i-ak4"/>
                             <constraint firstItem="yGT-1f-3Lg" firstAttribute="width" secondItem="P10-8U-gJt" secondAttribute="width" id="f6h-Zt-ifm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Epb-M8-5Ey" secondAttribute="trailing" constant="20" id="ihu-1a-0Mm"/>
+                            <constraint firstItem="WKH-Lh-hWk" firstAttribute="leading" secondItem="sQJ-uZ-6QH" secondAttribute="leadingMargin" id="jQB-eI-gS9"/>
                             <constraint firstAttribute="centerX" secondItem="fk7-Op-vyV" secondAttribute="centerX" id="nLF-ib-HZn"/>
                             <constraint firstAttribute="centerX" secondItem="Epb-M8-5Ey" secondAttribute="centerX" id="qOe-iX-4Sg"/>
                             <constraint firstAttribute="centerY" secondItem="Mo6-Nb-Zga" secondAttribute="centerY" id="qql-7F-JEk"/>
@@ -218,6 +265,7 @@
                     </view>
                     <connections>
                         <outlet property="ageTextField" destination="Epb-M8-5Ey" id="IHr-Sy-PKb"/>
+                        <outlet property="avatarGrid" destination="WKH-Lh-hWk" id="4wP-tq-wxz"/>
                         <outlet property="collegeTextField" destination="fk7-Op-vyV" id="SbR-HT-WWt"/>
                         <outlet property="degreeTextField" destination="GGe-dY-LwF" id="JZv-OH-ty7"/>
                         <outlet property="emailTextField" destination="yGT-1f-3Lg" id="Tqu-AL-At2"/>

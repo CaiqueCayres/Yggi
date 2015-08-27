@@ -37,6 +37,7 @@
 		C04B4B7F1B8E1E2700F907F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B4B7E1B8E1E2700F907F9 /* User.swift */; };
 		C969B1AC1B8E682F00791C7D /* ChildSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B1AB1B8E682F00791C7D /* ChildSignUpViewController.swift */; };
 		E91B566D1B8E40D0008CF47E /* CollegeSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */; };
+		E91B566F1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		C04B4B7E1B8E1E2700F907F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C969B1AB1B8E682F00791C7D /* ChildSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildSignUpViewController.swift; sourceTree = "<group>"; };
 		E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeSignUpViewController.swift; sourceTree = "<group>"; };
+		E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				C04011141B8CF5BF00CBD943 /* AppDelegate.swift */,
 				C04011191B8CF5BF00CBD943 /* ViewController.swift */,
 				C040111B1B8CF5BF00CBD943 /* Main.storyboard */,
+				E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */,
 				E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */,
 				C969B1AB1B8E682F00791C7D /* ChildSignUpViewController.swift */,
 				C040111E1B8CF5BF00CBD943 /* Images.xcassets */,
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91B566F1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift in Sources */,
 				C040111A1B8CF5BF00CBD943 /* ViewController.swift in Sources */,
 				C04011611B8D02E700CBD943 /* ParseManager.swift in Sources */,
 				C04B4B7F1B8E1E2700F907F9 /* User.swift in Sources */,
