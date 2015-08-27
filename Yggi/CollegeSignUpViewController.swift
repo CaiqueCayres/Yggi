@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollegeSignUpViewController: UIViewController, UITextFieldDelegate {
+class CollegeSignUpViewController: UIViewController, UITextFieldDelegate, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UIImagePickerControllerDelegate {
 //TextField com o nome
     @IBOutlet weak var nameTextField: UITextField!
 //TextField com a universidade
@@ -19,6 +19,10 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ageTextField: UITextField!
 //TextField com o Email
     @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var avatarGrid: UICollectionView!
+    
+    
     
     
     @IBAction func signUpAction(sender: AnyObject) {
@@ -59,15 +63,64 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Text fields treatment
         nameTextField.becomeFirstResponder()
         collegeTextField.becomeFirstResponder()
         degreeTextField.becomeFirstResponder()
         ageTextField.becomeFirstResponder()
         emailTextField.becomeFirstResponder()
         
+        //Collection View Treatment
+        avatarGrid.backgroundColor = UIColor.blueColor()
+        
         // Do any additional setup after loading the view.
     }
 
+    // MARK Métodos da CollectionView
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: UIScreen.mainScreen().bounds.width / CGFloat(6), height: UIScreen.mainScreen().bounds.width / CGFloat(6))
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 8
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cellImage: AvatarCellCollectionViewCell = self.avatarGrid.dequeueReusableCellWithReuseIdentifier("cellImage", forIndexPath: indexPath) as! AvatarCellCollectionViewCell
+        cellImage.avatarChoice.image = UIImage(named:"sidney")//named: imagens[indexPath.row])
+        
+        return cellImage
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+//        self.imagem = UIImage(named:imagens[indexPath.row])
+//        self.imagemSelecionada.image = UIImage(named:imagens[indexPath.row])
+//        
+//        self.myCollectionView.scrollToItemAtIndexPath( indexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
+//        self.nivel = indexPath.row
+//        println(self.nivel)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
