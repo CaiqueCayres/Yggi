@@ -13,7 +13,7 @@ class ParseManager: NSObject {
     
     
     
-    class func addNewUser(newUser: User ,  completion: () -> Void){
+    class func addNewChild(newUser: User ,  completion: () -> Void){
     
         var user = PFUser()
         user.username = newUser.name
@@ -21,7 +21,8 @@ class ParseManager: NSObject {
         user.email = newUser.email
         user["age"] = newUser.age
         user["gender"] =  newUser.gender
-        user["type"] =  newUser.type
+        user["type"] = newUser.type
+        //user["avatar"] = newUser.avatar
         
         user.signUpInBackgroundWithBlock {(succeeded: Bool, error: NSError?) -> Void in
 
@@ -33,12 +34,40 @@ class ParseManager: NSObject {
             } else {
                 
                println("Usuario Logado")
-                
             }
         
             completion()
         }
    
+    }
+    
+    
+    class func addNewCollege(newUser: User ,  completion: () -> Void){
+        
+        var user = PFUser()
+        user.username = newUser.name
+        user.password = newUser.password
+        user.email = newUser.email
+        user["age"] = newUser.age
+        user["gender"] =  newUser.gender
+        user["type"] = newUser.type
+        //user["avatar"] = newUser.avatar
+        
+        user.signUpInBackgroundWithBlock {(succeeded: Bool, error: NSError?) -> Void in
+            
+            if let error = error {
+                
+                let errorString = error.userInfo?["error"] as? NSString
+                // Show the errorString somewhere and let the user try again.
+                
+            } else {
+                
+                println("Usuario Logado")
+            }
+            
+            completion()
+        }
+        
     }
     
     
@@ -68,13 +97,9 @@ class ParseManager: NSObject {
         question.saveInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
             
             if (success) {
-                
                println("Questao salva")
-                
             } else {
-                
                 println(error!.userInfo?["error"] as? NSString)
-
             }
         }
         
@@ -89,14 +114,10 @@ class ParseManager: NSObject {
         query.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if error == nil{
-                
                 println(objects)
-                
-                
-                
             }
-            }
-)
+            
+        })
         
 
     }
