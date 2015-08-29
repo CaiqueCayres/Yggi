@@ -40,6 +40,8 @@
 		C969B1AC1B8E682F00791C7D /* ChildSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969B1AB1B8E682F00791C7D /* ChildSignUpViewController.swift */; };
 		E91B566D1B8E40D0008CF47E /* CollegeSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */; };
 		E91B566F1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */; };
+		E95C2E0E1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C2E0D1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift */; };
+		E95C2E101B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C2E0F1B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		C969B1AB1B8E682F00791C7D /* ChildSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildSignUpViewController.swift; sourceTree = "<group>"; };
 		E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeSignUpViewController.swift; sourceTree = "<group>"; };
 		E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		E95C2E0D1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSignUpCollegeViewController.swift; sourceTree = "<group>"; };
+		E95C2E0F1B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSignUpCollegeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 				C04011141B8CF5BF00CBD943 /* AppDelegate.swift */,
 				C04011191B8CF5BF00CBD943 /* ViewController.swift */,
 				C040111B1B8CF5BF00CBD943 /* Main.storyboard */,
+				E95C2E0F1B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift */,
+				E95C2E0D1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift */,
 				E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */,
 				C943334C1B92380B00545CEF /* TakePhotoViewController.swift */,
 				E91B566C1B8E40D0008CF47E /* CollegeSignUpViewController.swift */,
@@ -341,9 +347,11 @@
 				C04011611B8D02E700CBD943 /* ParseManager.swift in Sources */,
 				C04B4B7F1B8E1E2700F907F9 /* User.swift in Sources */,
 				C943334D1B92380B00545CEF /* TakePhotoViewController.swift in Sources */,
+				E95C2E0E1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift in Sources */,
 				C969B1AC1B8E682F00791C7D /* ChildSignUpViewController.swift in Sources */,
 				C040115E1B8D001F00CBD943 /* Questions.swift in Sources */,
 				C04011151B8CF5BF00CBD943 /* AppDelegate.swift in Sources */,
+				E95C2E101B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift in Sources */,
 				E91B566D1B8E40D0008CF47E /* CollegeSignUpViewController.swift in Sources */,
 				C04011181B8CF5BF00CBD943 /* Yggi.xcdatamodeld in Sources */,
 				C0AB9FC71B9246B700877C44 /* ObjectsAux.swift in Sources */,
