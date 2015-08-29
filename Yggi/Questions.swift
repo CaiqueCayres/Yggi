@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Parse
 
 class Questions: NSObject {
    
-    let childID = String()
-    let questionImageData = NSData()
-    let questionDescription = String()
+    var questionID = String()
+    var child = PFUser()
+    var questionImageData = NSData()
+    var questionDescription = String()
+    var questionDate = NSDate()
+    var questionFinished = Bool()
     
-
+    
 }

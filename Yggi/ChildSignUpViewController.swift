@@ -41,21 +41,15 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
         }
         
         newRegistratingUser.gender = 1 // TODO
-        newRegistratingUser.type = 0
+        newRegistratingUser.child = true
         newRegistratingUser.college = "teste"
         newRegistratingUser.serie = serie.text.toInt()!
         
         
         
         ParseManager.addNewUser(newRegistratingUser, completion: { () -> Void in
-            println("New user added!")
+        println("Usuario Registrado")
         })
-        
-        ParseManager.findQuestions({ () -> Void in
-            println("festa")
-        } )
-        
-    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         name.resignFirstResponder()
@@ -67,6 +61,7 @@ class ChildSignUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         name.becomeFirstResponder()

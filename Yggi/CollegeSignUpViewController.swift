@@ -22,6 +22,7 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate, UIColl
     
     @IBOutlet weak var avatarGrid: UICollectionView!
     
+    var feedQuestions = [Questions]()
     
     
     
@@ -39,14 +40,11 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate, UIColl
         newRegistratingUser.age = ageTextField.text.toInt()!
         newRegistratingUser.gender = 1
         newRegistratingUser.college = collegeTextField.text
+        newRegistratingUser.child = false
         
-        ParseManager.addNewUser(newRegistratingUser, completion: { () -> Void in
-            println("Vai curintia!")
-        })
-        
-        ParseManager.findQuestions({ () -> Void in
-            println("festa")
-        } )
+       ParseManager.addNewUser(newRegistratingUser, completion: { () -> Void in
+        println("Usuario Registrado")
+       })
         
     }
     
@@ -75,6 +73,15 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate, UIColl
         avatarGrid.backgroundColor = UIColor.blueColor()
         
         // Do any additional setup after loading the view.
+        
+        ParseManager.findQuestions{ (questions) -> Void in
+            
+            print(questions)
+            
+        }
+
+        
+        
     }
 
     // MARK Métodos da CollectionView

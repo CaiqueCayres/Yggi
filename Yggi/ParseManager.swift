@@ -11,47 +11,17 @@ import Parse
 
 class ParseManager: NSObject {
     
-    
-    
-    class func addNewChild(newUser: User ,  completion: () -> Void){
-    
+    class func addNewUser(newUser: User ,  completion: () -> Void){
+        
         var user = PFUser()
+        
         user.username = newUser.name
         user.password = newUser.password
         user.email = newUser.email
         user["age"] = newUser.age
         user["gender"] =  newUser.gender
-        user["type"] = newUser.type
-        //user["avatar"] = newUser.avatar
-        
-        user.signUpInBackgroundWithBlock {(succeeded: Bool, error: NSError?) -> Void in
-
-            if let error = error {
-                
-                let errorString = error.userInfo?["error"] as? NSString
-                // Show the errorString somewhere and let the user try again.
-                
-            } else {
-                
-               println("Usuario Logado")
-            }
-        
-            completion()
-        }
-   
-    }
-    
-    
-    class func addNewCollege(newUser: User ,  completion: () -> Void){
-        
-        var user = PFUser()
-        user.username = newUser.name
-        user.password = newUser.password
-        user.email = newUser.email
-        user["age"] = newUser.age
-        user["gender"] =  newUser.gender
-        user["type"] = newUser.type
-        //user["avatar"] = newUser.avatar
+        user["child"] = newUser.child
+        user["avatar"] = newUser.avatar
         
         user.signUpInBackgroundWithBlock {(succeeded: Bool, error: NSError?) -> Void in
             
@@ -76,7 +46,9 @@ class ParseManager: NSObject {
         PFUser.logInWithUsernameInBackground( userName, password: userPassword) {(user: PFUser?, error: NSError?) -> Void in
             
             if user != nil {
+                
                 // Do stuff after successful login.
+                
             } else {
                 // The login failed. Check error to see why.
             }
@@ -94,32 +66,44 @@ class ParseManager: NSObject {
         question["createdBy"] = PFUser.currentUser()
         question["picture"] = newQuestion.questionImageData
         question["description"] = newQuestion.questionDescription
+        question["finished"] = newQuestion.questionFinished
+        
         question.saveInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
             
             if (success) {
-               println("Questao salva")
+                
+                println("Questao salva")
+                
+                completion()
+                
             } else {
                 println(error!.userInfo?["error"] as? NSString)
             }
         }
         
-        completion()
     }
     
     
-    class func findQuestions(completion: ()-> Void){
+    class func findQuestions(completion: ([PFObject])-> Void){
     
     let query = PFQuery(className: "Question")
         query.whereKey("finished", equalTo: false)
-        query.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]?, error: NSError?) -> Void in
+        query.findObjectsInBackgroundWithBlock {(objects: [AnyObject]?, error: NSError?) -> Void in
             
-            if error == nil{
-                println(objects)
-            }
-            
-        })
+            if error == nil {
+                
+                println("Successfully retrieved \(objects!.count) questions.")
         
+                var newObjects = objects as? [PFObject]
 
+                completion(newObjects!)
+                
+                
+            }else{
+              
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
     }
     
 

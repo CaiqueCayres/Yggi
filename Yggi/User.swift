@@ -15,8 +15,9 @@ class User: NSObject {
     var email = String()
     var age = Int()
     var gender = Int()
-    var type = Int() // TODO ??
+    var child = Bool()
     var college = String()
     var serie = Int()
+    var avatar = Int()
     
 }
