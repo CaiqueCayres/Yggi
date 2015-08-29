@@ -15,6 +15,13 @@ class TakePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var imagePicked: UIImageView!
     var newMedia: Bool?
     
+    // media elements
+    @IBOutlet weak var takePhoto: UIButton!
+    @IBOutlet weak var chooseGallery: UIButton!
+    @IBOutlet weak var arrow1: UIImageView!
+    @IBOutlet weak var arrow2: UIImageView!
+    @IBOutlet weak var textGuide: UILabel!
+    @IBOutlet weak var sendButton: UIButton!
     
     
     @IBAction func TakePhoto(sender: UIButton) {
@@ -50,6 +57,14 @@ class TakePhotoViewController: UIViewController, UIImagePickerControllerDelegate
             self.presentViewController(imagePicker, animated: true, completion: nil)
             newMedia = false
             
+            // hide media elements
+            takePhoto.hidden = true
+            chooseGallery.hidden = true
+            arrow1.hidden = true
+            arrow2.hidden = true
+            textGuide.hidden = true
+            sendButton.hidden = false
+
         }
     }
     
@@ -68,6 +83,14 @@ class TakePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         // if everything was OK
         if mediaType.hasPrefix(kUTTypeImage as! String) {
             imagePicked.image = image
+            
+            // hide media elements
+            takePhoto.hidden = true
+            chooseGallery.hidden = true
+            arrow1.hidden = true
+            arrow2.hidden = true
+            textGuide.hidden = true
+            sendButton.hidden = false
         }
         
         // if something went wrong
@@ -100,6 +123,7 @@ class TakePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        sendButton.hidden = true
     }
     
     override func didReceiveMemoryWarning() {
