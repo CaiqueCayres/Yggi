@@ -365,11 +365,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTD-G4-6Xs">
+                                <rect key="frame" x="225" y="464" width="150" height="136"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C0C-1w-XE5">
                                 <rect key="frame" x="0.0" y="64" width="600" height="400"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.1960784314" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.92549019610000005" green="0.1960784314" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zQ-Q8-wMl" userLabel="send">
+                                <rect key="frame" x="230" y="470" width="140" height="100"/>
+                                <state key="normal" image="Sent Filled-100">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha um dos passos abaixo para enviar sua foto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWF-k3-yxW">
                                 <rect key="frame" x="230" y="182" width="141" height="170"/>
                                 <constraints>
@@ -380,51 +390,81 @@
                                 <color key="textColor" red="0.95686274510000002" green="0.76078431369999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Fa-CMA">
-                                <rect key="frame" x="134.5" y="464" width="91" height="136"/>
-                                <state key="normal" title="Tire uma foto">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Fa-CMA" userLabel="takePhoto">
+                                <rect key="frame" x="125" y="464" width="100" height="136"/>
+                                <state key="normal" image="Camera Filled-100">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="TakePhoto:" destination="9LQ-5t-KNO" eventType="touchUpInside" id="o1M-AQ-LAu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ns-gF-Brp">
-                                <rect key="frame" x="375" y="464" width="125" height="136"/>
-                                <state key="normal" title="escolha da galeria">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ns-gF-Brp" userLabel="gallery">
+                                <rect key="frame" x="375" y="464" width="100" height="136"/>
+                                <state key="normal" image="Add Image Filled-100">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="ChooseGallery:" destination="9LQ-5t-KNO" eventType="touchUpInside" id="U9S-tg-B9G"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTD-G4-6Xs">
-                                <rect key="frame" x="225" y="464" width="150" height="136"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="aOA-1z-oH5">
+                                <rect key="frame" x="374.5" y="328" width="100" height="136"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="zlp-U5-WCa">
+                                <rect key="frame" x="125" y="328" width="100" height="136"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aOA-1z-oH5" firstAttribute="bottom" secondItem="C0C-1w-XE5" secondAttribute="bottom" id="0Fx-TM-P0S"/>
+                            <constraint firstItem="zlp-U5-WCa" firstAttribute="height" secondItem="aOA-1z-oH5" secondAttribute="height" id="2Jg-g9-iXv"/>
                             <constraint firstItem="8ns-gF-Brp" firstAttribute="height" secondItem="eTD-G4-6Xs" secondAttribute="height" id="3Mo-t0-Cqp"/>
                             <constraint firstItem="eTD-G4-6Xs" firstAttribute="width" secondItem="AqG-tW-BMP" secondAttribute="width" multiplier="0.25" id="7U1-OS-jeQ"/>
                             <constraint firstAttribute="centerX" secondItem="eTD-G4-6Xs" secondAttribute="centerX" id="DoB-99-gr8"/>
+                            <constraint firstItem="8ns-gF-Brp" firstAttribute="width" secondItem="aOA-1z-oH5" secondAttribute="width" id="JLP-ap-Fyn"/>
+                            <constraint firstItem="zlp-U5-WCa" firstAttribute="width" secondItem="DhH-Fa-CMA" secondAttribute="width" id="LYq-lt-q5u"/>
                             <constraint firstItem="uWF-k3-yxW" firstAttribute="centerX" secondItem="C0C-1w-XE5" secondAttribute="centerX" constant="0.5" id="NW6-Aj-j2s"/>
                             <constraint firstItem="eTD-G4-6Xs" firstAttribute="top" secondItem="C0C-1w-XE5" secondAttribute="bottom" id="Tbu-Gf-AbR"/>
                             <constraint firstItem="eTD-G4-6Xs" firstAttribute="height" secondItem="DhH-Fa-CMA" secondAttribute="height" id="Ts7-zF-xun"/>
+                            <constraint firstItem="8ns-gF-Brp" firstAttribute="height" secondItem="aOA-1z-oH5" secondAttribute="height" id="WNR-L2-R0S"/>
+                            <constraint firstItem="8ns-gF-Brp" firstAttribute="bottom" secondItem="aOA-1z-oH5" secondAttribute="bottom" id="WXb-f1-ImT"/>
                             <constraint firstItem="KNj-4T-34Q" firstAttribute="top" secondItem="DhH-Fa-CMA" secondAttribute="bottom" id="aMx-A1-R64"/>
                             <constraint firstItem="KNj-4T-34Q" firstAttribute="top" secondItem="eTD-G4-6Xs" secondAttribute="bottom" id="aRK-ku-MXN"/>
                             <constraint firstItem="uWF-k3-yxW" firstAttribute="centerY" secondItem="C0C-1w-XE5" secondAttribute="centerY" constant="3" id="bMM-UD-m15"/>
                             <constraint firstItem="KNj-4T-34Q" firstAttribute="top" secondItem="8ns-gF-Brp" secondAttribute="bottom" id="dGM-w8-UsZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="C0C-1w-XE5" secondAttribute="trailing" constant="-16" id="e3a-gV-gnb"/>
                             <constraint firstItem="C0C-1w-XE5" firstAttribute="leading" secondItem="AqG-tW-BMP" secondAttribute="leadingMargin" constant="-16" id="gvH-SM-hzu"/>
+                            <constraint firstItem="zlp-U5-WCa" firstAttribute="centerX" secondItem="DhH-Fa-CMA" secondAttribute="centerX" id="gxf-zd-bXf"/>
+                            <constraint firstItem="8ns-gF-Brp" firstAttribute="centerX" secondItem="aOA-1z-oH5" secondAttribute="centerX" constant="0.5" id="hP2-5E-z40"/>
+                            <constraint firstItem="zlp-U5-WCa" firstAttribute="bottom" secondItem="DhH-Fa-CMA" secondAttribute="bottom" id="ioh-mQ-1pD"/>
                             <constraint firstItem="8ns-gF-Brp" firstAttribute="leading" secondItem="eTD-G4-6Xs" secondAttribute="trailing" id="jXE-Qw-tTg"/>
+                            <constraint firstItem="zlp-U5-WCa" firstAttribute="bottom" secondItem="C0C-1w-XE5" secondAttribute="bottom" id="kth-G5-4Sa"/>
+                            <constraint firstItem="zlp-U5-WCa" firstAttribute="width" secondItem="aOA-1z-oH5" secondAttribute="width" id="mBe-OC-UAq"/>
+                            <constraint firstItem="8ns-gF-Brp" firstAttribute="bottom" secondItem="aOA-1z-oH5" secondAttribute="bottom" constant="-10" id="mNG-sF-fN0"/>
+                            <constraint firstItem="zlp-U5-WCa" firstAttribute="height" secondItem="DhH-Fa-CMA" secondAttribute="height" id="oGt-HB-6Cu"/>
                             <constraint firstItem="C0C-1w-XE5" firstAttribute="top" secondItem="cDH-Uu-p1K" secondAttribute="bottom" id="plh-8k-QEc"/>
                             <constraint firstItem="C0C-1w-XE5" firstAttribute="height" secondItem="AqG-tW-BMP" secondAttribute="height" multiplier="0.66667" id="sE7-Eq-nka"/>
                             <constraint firstItem="eTD-G4-6Xs" firstAttribute="leading" secondItem="DhH-Fa-CMA" secondAttribute="trailing" id="x3P-QL-tgi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ioh-mQ-1pD"/>
+                                <exclude reference="JLP-ap-Fyn"/>
+                                <exclude reference="WNR-L2-R0S"/>
+                                <exclude reference="WXb-f1-ImT"/>
+                                <exclude reference="mNG-sF-fN0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="arrow1" destination="zlp-U5-WCa" id="yM8-Hf-SJI"/>
+                        <outlet property="arrow2" destination="aOA-1z-oH5" id="B7o-uT-fKe"/>
+                        <outlet property="chooseGallery" destination="8ns-gF-Brp" id="8Sq-ME-2EH"/>
                         <outlet property="imagePicked" destination="C0C-1w-XE5" id="fTB-oY-0pL"/>
+                        <outlet property="sendButton" destination="2zQ-Q8-wMl" id="tzI-05-DXj"/>
+                        <outlet property="takePhoto" destination="DhH-Fa-CMA" id="x9k-X3-Vvs"/>
+                        <outlet property="textGuide" destination="uWF-k3-yxW" id="C7e-6q-30M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NX-iW-JT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,4 +613,10 @@
             <point key="canvasLocation" x="502" y="-593"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Add Image Filled-100" width="100" height="100"/>
+        <image name="Camera Filled-100" width="100" height="100"/>
+        <image name="Down Filled-100" width="100" height="100"/>
+        <image name="Sent Filled-100" width="100" height="100"/>
+    </resources>
 </document>
