@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -139,9 +139,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyU-EC-6fT">
+                                <rect key="frame" x="248" y="390" width="104" height="30"/>
+                                <state key="normal" title="Botão da Carol">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9LQ-5t-KNO" kind="show" id="Zk1-yG-tGc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JyU-EC-6fT" firstAttribute="top" secondItem="rfd-ay-ciQ" secondAttribute="bottom" constant="15" id="1Wx-gp-ZbW"/>
                             <constraint firstItem="bgY-3h-byr" firstAttribute="leading" secondItem="mct-kt-GLf" secondAttribute="leadingMargin" constant="20" id="8At-2b-3wN"/>
                             <constraint firstItem="rfd-ay-ciQ" firstAttribute="leading" secondItem="mct-kt-GLf" secondAttribute="leadingMargin" id="8eJ-nA-znz"/>
                             <constraint firstItem="Ml2-gU-M71" firstAttribute="top" secondItem="bgY-3h-byr" secondAttribute="bottom" constant="10" id="B8R-pW-NIq"/>
@@ -171,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTm-pJ-Zs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="141"/>
+            <point key="canvasLocation" x="502" y="149"/>
         </scene>
         <!--College Sign Up View Controller-->
         <scene sceneID="Km2-I9-rSD">
@@ -339,6 +349,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNS-XU-572" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="502" y="-593"/>
+        </scene>
+        <!--Take Photo View Controller-->
+        <scene sceneID="pQu-gU-6VI">
+            <objects>
+                <viewController id="9LQ-5t-KNO" customClass="TakePhotoViewController" customModule="Yggi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cDH-Uu-p1K"/>
+                        <viewControllerLayoutGuide type="bottom" id="KNj-4T-34Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AqG-tW-BMP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C0C-1w-XE5">
+                                <rect key="frame" x="0.0" y="-157" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Fa-CMA">
+                                <rect key="frame" x="214" y="487" width="108" height="30"/>
+                                <state key="normal" title="Tire uma foto">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TakePhoto:" destination="9LQ-5t-KNO" eventType="touchUpInside" id="o1M-AQ-LAu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ns-gF-Brp">
+                                <rect key="frame" x="382" y="487" width="146" height="30"/>
+                                <state key="normal" title="escolha da galeria">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChooseGallery:" destination="9LQ-5t-KNO" eventType="touchUpInside" id="U9S-tg-B9G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imagePicked" destination="C0C-1w-XE5" id="fTB-oY-0pL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9NX-iW-JT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1496" y="141"/>
         </scene>
     </scenes>
 </document>
