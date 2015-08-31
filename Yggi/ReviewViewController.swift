@@ -9,8 +9,9 @@
 import UIKit
 
 class ReviewViewController: UIViewController {
-
+    //Foto do exercício, setada na outra view.
     var imageToBeSetted = UIImage()
+    
     //Botão para enviar texto
     @IBOutlet weak var textReviewButton: UIButton!
     //Botão para enviar audio
@@ -34,15 +35,38 @@ class ReviewViewController: UIViewController {
     
     
     @IBAction func makeTextReview(sender: AnyObject) {
-        self.textReviewButton.hidden = true
-        self.audioReviewButton.hidden = true
-        self.textInput.hidden = false
+        var alertview = JSSAlertView().show(self, title: "Cadastre-se", text:"Para enviar uma review, você deve ser cadastrado!!" , buttonText: "Voltar", cancelButtonText: "Cadastrar" , color: UIColorFromHex(0x3584B2, alpha: 1))
+        
+        alertview.addCancelAction({
+            Void in
+            self.performSegueWithIdentifier("cadastrar", sender: self)
+        })
+        alertview.addAction({
+            Void in
+            //self.dismissViewControllerAnimated(true, completion: nil)
+            println("Vai timao")
+        })
+        
+//        self.textReviewButton.hidden = true
+//        self.audioReviewButton.hidden = true
+//        self.textInput.hidden = false
+        
     }
     
     @IBAction func makeAudioReview(sender: AnyObject) {
-        self.textReviewButton.hidden = true
-        self.audioReviewButton.hidden = true
+        var alertview = JSSAlertView().show(self, title: "Cadastre-se", text:"Para enviar uma review, você deve ser cadastrado!!" , buttonText: "Voltar", cancelButtonText: "Cadastrar" , color: UIColorFromHex(0x3584B2, alpha: 1))
+        
+        alertview.addCancelAction({
+            Void in
+            self.performSegueWithIdentifier("cadastrar", sender: self)
+        })
+        alertview.addAction({
+            Void in
+            //self.dismissViewControllerAnimated(true, completion: nil)
+            println("Vai timao")
+        })
     }
+    
     /*
     // MARK: - Navigation
 
