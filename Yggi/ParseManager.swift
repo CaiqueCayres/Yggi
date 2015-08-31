@@ -103,7 +103,7 @@ class ParseManager: NSObject {
             }
         }
     }
-      
+    
 
 
     class func getImagefromPFFile(imageFile: PFFile , completion:(UIImage) -> Void ){
@@ -128,7 +128,6 @@ class ParseManager: NSObject {
     
     
 
-    
     
     
 }
