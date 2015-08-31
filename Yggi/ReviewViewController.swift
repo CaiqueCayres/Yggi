@@ -35,7 +35,7 @@ class ReviewViewController: UIViewController {
     
     
     @IBAction func makeTextReview(sender: AnyObject) {
-        var alertview = JSSAlertView().show(self, title: "Cadastre-se", text:"Para enviar uma review, você deve ser cadastrado!!" , buttonText: "Voltar", cancelButtonText: "Cadastrar" , color: UIColorFromHex(0x3584B2, alpha: 1))
+        var alertview = JSSAlertView().show(self, title: "Cadastre-se", text:"Para enviar um comentário é preciso estar cadastrada." , buttonText: "Voltar", cancelButtonText: "Cadastrar" , color: UIColorFromHex(0x3584B2, alpha: 1))
         
         alertview.addCancelAction({
             Void in
@@ -54,7 +54,7 @@ class ReviewViewController: UIViewController {
     }
     
     @IBAction func makeAudioReview(sender: AnyObject) {
-        var alertview = JSSAlertView().show(self, title: "Cadastre-se", text:"Para enviar uma review, você deve ser cadastrado!!" , buttonText: "Voltar", cancelButtonText: "Cadastrar" , color: UIColorFromHex(0x3584B2, alpha: 1))
+        var alertview = JSSAlertView().show(self, title: "Cadastre-se", text:"Para enviar um comentário é preciso estar cadastrada." , buttonText: "Voltar", cancelButtonText: "Cadastrar" , color: UIColorFromHex(0x3584B2, alpha: 1))
         
         alertview.addCancelAction({
             Void in
