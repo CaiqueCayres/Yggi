@@ -42,6 +42,7 @@
 		E91B566F1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */; };
 		E95C2E0E1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C2E0D1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift */; };
 		E95C2E101B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C2E0F1B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift */; };
+		E96ACF451B94AEB9003E49B2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96ACF441B94AEB9003E49B2 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		E95C2E0D1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSignUpCollegeViewController.swift; sourceTree = "<group>"; };
 		E95C2E0F1B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSignUpCollegeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E96ACF441B94AEB9003E49B2 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				C04011141B8CF5BF00CBD943 /* AppDelegate.swift */,
 				C04011191B8CF5BF00CBD943 /* ViewController.swift */,
 				C040111B1B8CF5BF00CBD943 /* Main.storyboard */,
+				E96ACF441B94AEB9003E49B2 /* ReviewViewController.swift */,
 				E95C2E0F1B92557B0016CB36 /* BeforeSignUpCollegeCollectionViewCell.swift */,
 				E95C2E0D1B92550A0016CB36 /* BeforeSignUpCollegeViewController.swift */,
 				E91B566E1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift */,
@@ -344,6 +347,7 @@
 			files = (
 				E91B566F1B8EB3A8008CF47E /* AvatarCellCollectionViewCell.swift in Sources */,
 				C040111A1B8CF5BF00CBD943 /* ViewController.swift in Sources */,
+				E96ACF451B94AEB9003E49B2 /* ReviewViewController.swift in Sources */,
 				C04011611B8D02E700CBD943 /* ParseManager.swift in Sources */,
 				C04B4B7F1B8E1E2700F907F9 /* User.swift in Sources */,
 				C943334D1B92380B00545CEF /* TakePhotoViewController.swift in Sources */,
@@ -488,6 +492,7 @@
 				INFOPLIST_FILE = Yggi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -502,6 +507,7 @@
 				INFOPLIST_FILE = Yggi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
