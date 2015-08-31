@@ -13,7 +13,7 @@ class Questions: NSObject {
    
     var questionID = String()
     var child = PFUser()
-    var questionImageData = NSData()
+    var questionImageData = PFFile()
     var questionDescription = String()
     var questionDate = NSDate()
     var questionFinished = Bool()

@@ -28,7 +28,6 @@ class ParseManager: NSObject {
             if let error = error {
                 
                 let errorString = error.userInfo?["error"] as? NSString
-                // Show the errorString somewhere and let the user try again.
                 
             } else {
                 
@@ -86,7 +85,7 @@ class ParseManager: NSObject {
     
     class func findQuestions(completion: ([PFObject])-> Void){
     
-    let query = PFQuery(className: "Question")
+    let query = PFQuery(className: "questions")
         query.whereKey("finished", equalTo: false)
         query.findObjectsInBackgroundWithBlock {(objects: [AnyObject]?, error: NSError?) -> Void in
             
@@ -98,15 +97,38 @@ class ParseManager: NSObject {
 
                 completion(newObjects!)
                 
-                
             }else{
               
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
     }
+      
+
+
+    class func getImagefromPFFile(imageFile: PFFile , completion:(UIImage) -> Void ){
+        
+        imageFile.getDataInBackgroundWithBlock {
+            
+            (imageData: NSData?, error: NSError?) -> Void in
+            
+            if error == nil {
+                
+                if let imageData = imageData {
+                    
+                    let image = UIImage(data:imageData)
+                    
+                    completion(image!)
+                }
+            }
+            
+        }
+
+    }
+    
     
 
-
-
+    
+    
+    
 }

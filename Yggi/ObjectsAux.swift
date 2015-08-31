@@ -12,16 +12,16 @@ import Parse
 class ObjectsAux: NSObject {
  
     
-    class func makeObjectToQuestion(objects:[PFObject] , completion: () -> Void) {
+    class func makeObjectToQuestion(objects:[PFObject] , completion: ([Questions]) -> Void) {
         
-        var questions:[Questions]!
-        
-        var question = Questions()
+        var questions = [Questions]()
 
         for object in objects {
-
+            
+            var question = Questions()
+            
             question.questionDescription = object.valueForKey("description") as! String
-            question.questionImageData = object.valueForKey("picture") as! NSData
+            question.questionImageData = object.valueForKey("picture") as! PFFile
             question.child = object.valueForKey("createdBy") as! PFUser
             question.questionDate = object.createdAt!
             question.questionID = object.objectId!
@@ -30,16 +30,7 @@ class ObjectsAux: NSObject {
         }
      
         
-      completion()
-    }
-    
-    class func makePFUserToUser(user: PFUser , completion:()-> Void){
-    
-    
-    
-
-    
-    
+      completion(questions)
     }
     
 }

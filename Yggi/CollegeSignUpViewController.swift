@@ -22,9 +22,6 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate, UIColl
     
     @IBOutlet weak var avatarGrid: UICollectionView!
     
-    var feedQuestions = [Questions]()
-    
-    
     
     @IBAction func signUpAction(sender: AnyObject) {
         nameTextField.resignFirstResponder()
@@ -72,15 +69,7 @@ class CollegeSignUpViewController: UIViewController, UITextFieldDelegate, UIColl
         //Collection View Treatment
         avatarGrid.backgroundColor = UIColor.blueColor()
         
-        // Do any additional setup after loading the view.
-        
-        ParseManager.findQuestions{ (questions) -> Void in
-            
-            print(questions)
-            
-        }
-
-        
+        // Do any additional setup after loading the view
         
     }
 

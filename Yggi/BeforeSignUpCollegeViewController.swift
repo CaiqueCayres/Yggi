@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
 
@@ -15,13 +16,31 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
     
     @IBOutlet weak var universitariaView: UICollectionView!
     
+     var feedQuestions = [Questions]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         universitariaView.backgroundView = UIView()
         var background = UIImageView()
         background.image = UIImage(named: "madeira")
         universitariaView.backgroundView?.addSubview(background)
-        // Do any additional setup after loading the view.
+        
+        
+        //Busca as perguntas no Parse
+        ParseManager.findQuestions{ (questions) -> Void in
+            
+            //Transforma um PFObject em um Questions
+            ObjectsAux.makeObjectToQuestion(questions, completion: { (festa) -> Void in
+                
+                self.feedQuestions = festa
+                print(self.feedQuestions)
+                self.universitariaView.reloadData()
+                
+            })
+            
+        
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +61,7 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
     // MARK Métodos da CollectionView
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 4
+        return feedQuestions.count
         
     }
     
@@ -67,6 +86,7 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cellImage: BeforeSignUpCollegeCollectionViewCell = self.universitariaView.dequeueReusableCellWithReuseIdentifier( "exerciseCell", forIndexPath: indexPath) as! BeforeSignUpCollegeCollectionViewCell
+        
         cellImage.exerciseImage.image = UIImage(named: "Questao Ygg")
 
         return cellImage
