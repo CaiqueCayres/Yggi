@@ -409,7 +409,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="aOA-1z-oH5">
-                                <rect key="frame" x="374.5" y="328" width="100" height="136"/>
+                                <rect key="frame" x="375" y="328" width="100" height="136"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="zlp-U5-WCa">
                                 <rect key="frame" x="125" y="328" width="100" height="136"/>
@@ -518,16 +518,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hoO-IF-jFm">
-                                                    <rect key="frame" x="8" y="8" width="227" height="113.5"/>
+                                                    <rect key="frame" x="8" y="8" width="227" height="114"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hoO-IF-jFm" secondAttribute="height" multiplier="6:3" id="zKp-g9-eDw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhf-nU-whW">
-                                                    <rect key="frame" x="8" y="121" width="227" height="51.5"/>
+                                                    <rect key="frame" x="8" y="121" width="227" height="52"/>
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Maria, 6" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pru-OV-dhV">
-                                                            <rect key="frame" x="76.5" y="8" width="74" height="30"/>
+                                                            <rect key="frame" x="77" y="8" width="74" height="30"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
