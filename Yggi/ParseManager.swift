@@ -79,7 +79,6 @@ class ParseManager: NSObject {
                 println(error!.userInfo?["error"] as? NSString)
             }
         }
-        
     }
     
     
@@ -121,9 +120,7 @@ class ParseManager: NSObject {
                     completion(image!)
                 }
             }
-            
         }
-
     }
     
     

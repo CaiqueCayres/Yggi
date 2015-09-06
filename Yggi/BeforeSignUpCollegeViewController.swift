@@ -87,12 +87,14 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
         
         let cellImage: BeforeSignUpCollegeCollectionViewCell = self.universitariaView.dequeueReusableCellWithReuseIdentifier( "exerciseCell", forIndexPath: indexPath) as! BeforeSignUpCollegeCollectionViewCell
         
+        var child = self.feedQuestions[indexPath.row].child
+        println(child)
+        
+        
         ParseManager.getImagefromPFFile(self.feedQuestions[indexPath.row].questionImageData, completion: { (cellUIImage) -> Void in
-            
             cellImage.exerciseImage.image = cellUIImage
-            
         })
-
+        
         return cellImage
     }
     

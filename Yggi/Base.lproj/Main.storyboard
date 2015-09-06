@@ -687,6 +687,7 @@
                                         </variation>
                                         <connections>
                                             <outlet property="exerciseImage" destination="hoO-IF-jFm" id="xuY-xV-ZSo"/>
+                                            <outlet property="nameAgeLabel" destination="Ban-U4-bAU" id="rsd-aQ-0fA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

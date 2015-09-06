@@ -12,5 +12,8 @@ class BeforeSignUpCollegeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var exerciseImage: UIImageView!
     
+    @IBOutlet weak var nameAgeLabel: UILabel!
+    
+    
     
 }
