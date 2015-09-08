@@ -20,9 +20,9 @@ class ObjectsAux: NSObject {
             
             var question = Questions()
             
-            question.questionDescription = object.valueForKey("description") as! String
-            question.questionImageData = object.valueForKey("picture") as! PFFile
-            question.child = object.valueForKey("createdBy") as! PFUser
+            question.questionDescription = object["description"] as! String
+            question.questionImageData = object["picture"] as! PFFile
+            question.child = object["createdBy"] as! PFUser
             question.questionDate = object.createdAt!
             question.questionID = object.objectId!
             
