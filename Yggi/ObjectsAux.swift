@@ -26,7 +26,10 @@ class ObjectsAux: NSObject {
             question.questionDate = object.createdAt!
             question.questionID = object.objectId!
             
+            question.child = question.child.fetchIfNeeded() as! PFUser
+            
             questions.append(question)
+            
         }
      
         

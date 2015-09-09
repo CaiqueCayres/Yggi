@@ -29,16 +29,16 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
         //Busca as perguntas no Parse
         ParseManager.findQuestions{ (questions) -> Void in
             
-            //Transforma um PFObject em um Questions
-            ObjectsAux.makeObjectToQuestion(questions, completion: { (festa) -> Void in
-                
-                self.feedQuestions = festa
-                print(self.feedQuestions)
-                self.universitariaView.reloadData()
-                
-            })
+            self.feedQuestions = questions
+            println(self.feedQuestions)
+            self.universitariaView.reloadData()
             
-        
+        //apos encontrar as perguntas no Parse comeco a buscar as imagens de cada pergunta
+            for quests in self.feedQuestions {
+                quests.questionImage = UIImage(data: quests.questionImageData.getData()!)!
+                self.universitariaView.reloadData()
+            }
+            
         }
         
     }
@@ -87,14 +87,12 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
         
         let cellImage: BeforeSignUpCollegeCollectionViewCell = self.universitariaView.dequeueReusableCellWithReuseIdentifier( "exerciseCell", forIndexPath: indexPath) as! BeforeSignUpCollegeCollectionViewCell
         
-        var child = self.feedQuestions[indexPath.row].child
+        cellImage.exerciseImage.image = self.feedQuestions[indexPath.row].questionImage
+        cellImage.nameLabel.text = self.feedQuestions[indexPath.row].child.username
         
-        println(child)
-        
-        
-        ParseManager.getImagefromPFFile(self.feedQuestions[indexPath.row].questionImageData, completion: { (cellUIImage) -> Void in
-            cellImage.exerciseImage.image = cellUIImage
-        })
+        //cellImage.ageLabel.text = self.feedQuestions[indexPath.row].child["age"] as? String
+        let age = self.feedQuestions[indexPath.row].child["age"] as! NSNumber
+        cellImage.ageLabel.text = age.stringValue
         
         return cellImage
     }

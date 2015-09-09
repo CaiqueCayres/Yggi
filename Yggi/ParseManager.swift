@@ -82,7 +82,7 @@ class ParseManager: NSObject {
     }
     
     
-    class func findQuestions(completion: ([PFObject])-> Void){
+    class func findQuestions(completion: ([Questions])-> Void){
     
     let query = PFQuery(className: "questions")
         query.whereKey("finished", equalTo: false)
@@ -93,38 +93,21 @@ class ParseManager: NSObject {
                 println("Successfully retrieved \(objects!.count) questions.")
         
                 var newObjects = objects as? [PFObject]
-
-                completion(newObjects!)
+                var questions = [Questions]()
+                
+                //Transforma um PFObject em um Questions
+                ObjectsAux.makeObjectToQuestion(newObjects!, completion: { (festa) -> Void in
+                    questions = festa
+                })
+                
+                completion(questions)
                 
             }else{
-              
+        
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
     }
-    
-
-
-    class func getImagefromPFFile(imageFile: PFFile , completion:(UIImage) -> Void ){
-        
-        imageFile.getDataInBackgroundWithBlock {
-            
-            (imageData: NSData?, error: NSError?) -> Void in
-            
-            if error == nil {
-                
-                if let imageData = imageData {
-                    
-                    let image = UIImage(data:imageData)
-                    
-                    completion(image!)
-                }
-            }
-        }
-    }
-    
-    
-
     
     
 }

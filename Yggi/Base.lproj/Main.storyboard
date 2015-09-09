@@ -640,19 +640,27 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhf-nU-whW">
                                                     <rect key="frame" x="8" y="145" width="227" height="28"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maria, 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-U4-bAU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="227" height="28"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-U4-bAU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="71" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Idade" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUw-5H-x8T">
+                                                            <rect key="frame" x="183" y="3" width="44" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="Ban-U4-bAU" firstAttribute="width" secondItem="uhf-nU-whW" secondAttribute="width" id="6Rf-3M-uFQ"/>
-                                                        <constraint firstAttribute="centerY" secondItem="Ban-U4-bAU" secondAttribute="centerY" id="Grc-je-g5L"/>
-                                                        <constraint firstAttribute="centerX" secondItem="Ban-U4-bAU" secondAttribute="centerX" id="b9T-pO-hO3"/>
-                                                        <constraint firstItem="Ban-U4-bAU" firstAttribute="height" secondItem="uhf-nU-whW" secondAttribute="height" id="wSg-nB-kjk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CUw-5H-x8T" secondAttribute="bottom" id="8XC-8I-soJ"/>
+                                                        <constraint firstItem="Ban-U4-bAU" firstAttribute="top" secondItem="uhf-nU-whW" secondAttribute="top" id="VkB-04-sZ7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CUw-5H-x8T" secondAttribute="trailing" id="bLj-kG-fiz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ban-U4-bAU" secondAttribute="bottom" id="ihb-nT-eCH"/>
+                                                        <constraint firstItem="Ban-U4-bAU" firstAttribute="leading" secondItem="uhf-nU-whW" secondAttribute="leading" id="p1g-2n-SOG"/>
+                                                        <constraint firstItem="CUw-5H-x8T" firstAttribute="top" secondItem="uhf-nU-whW" secondAttribute="top" id="sX1-Lf-YO8"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -686,8 +694,9 @@
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <outlet property="ageLabel" destination="CUw-5H-x8T" id="153-L0-YUQ"/>
                                             <outlet property="exerciseImage" destination="hoO-IF-jFm" id="xuY-xV-ZSo"/>
-                                            <outlet property="nameAgeLabel" destination="Ban-U4-bAU" id="rsd-aQ-0fA"/>
+                                            <outlet property="nameLabel" destination="Ban-U4-bAU" id="w06-ad-19d"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

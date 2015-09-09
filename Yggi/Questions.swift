@@ -17,6 +17,7 @@ class Questions: NSObject {
     var questionDescription = String()
     var questionDate = NSDate()
     var questionFinished = Bool()
+    var questionImage = UIImage()
     
     
 }
