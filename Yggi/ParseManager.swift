@@ -86,6 +86,7 @@ class ParseManager: NSObject {
     
     let query = PFQuery(className: "questions")
         query.whereKey("finished", equalTo: false)
+        query.orderByAscending("createdAt")
         query.findObjectsInBackgroundWithBlock {(objects: [AnyObject]?, error: NSError?) -> Void in
             
             if error == nil {
@@ -97,10 +98,9 @@ class ParseManager: NSObject {
                 
                 //Transforma um PFObject em um Questions
                 ObjectsAux.makeObjectToQuestion(newObjects!, completion: { (festa) -> Void in
-                    questions = festa
+                    completion(festa)
                 })
                 
-                completion(questions)
                 
             }else{
         

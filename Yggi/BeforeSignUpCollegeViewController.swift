@@ -30,15 +30,15 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
         ParseManager.findQuestions{ (questions) -> Void in
             
             self.feedQuestions = questions
-            println(self.feedQuestions)
-            self.universitariaView.reloadData()
+            println(self.feedQuestions.count)
             
         //apos encontrar as perguntas no Parse comeco a buscar as imagens de cada pergunta
-            for quests in self.feedQuestions {
-                quests.questionImage = UIImage(data: quests.questionImageData.getData()!)!
-                self.universitariaView.reloadData()
+            for quests in self.feedQuestions{
+                quests.questionImageData.getDataInBackgroundWithBlock({ (dataImage, erro) -> Void in
+                    quests.questionImage = UIImage(data: dataImage!)!
+                    self.universitariaView.reloadData()
+                })
             }
-            
         }
         
     }
@@ -87,11 +87,10 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
         
         let cellImage: BeforeSignUpCollegeCollectionViewCell = self.universitariaView.dequeueReusableCellWithReuseIdentifier( "exerciseCell", forIndexPath: indexPath) as! BeforeSignUpCollegeCollectionViewCell
         
-        cellImage.exerciseImage.image = self.feedQuestions[indexPath.row].questionImage
-        cellImage.nameLabel.text = self.feedQuestions[indexPath.row].child.username
-        
-        //cellImage.ageLabel.text = self.feedQuestions[indexPath.row].child["age"] as? String
-        let age = self.feedQuestions[indexPath.row].child["age"] as! NSNumber
+        cellImage.exerciseImage.image = self.feedQuestions[indexPath.section].questionImage
+        cellImage.nameLabel.text = self.feedQuestions[indexPath.section].child.username
+    
+        let age = self.feedQuestions[indexPath.section].child["age"] as! NSNumber
         cellImage.ageLabel.text = age.stringValue
         
         return cellImage

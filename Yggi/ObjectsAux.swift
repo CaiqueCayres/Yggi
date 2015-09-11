@@ -15,6 +15,8 @@ class ObjectsAux: NSObject {
     class func makeObjectToQuestion(objects:[PFObject] , completion: ([Questions]) -> Void) {
         
         var questions = [Questions]()
+        
+        var questionSize = objects.count
 
         for object in objects {
             
@@ -26,14 +28,23 @@ class ObjectsAux: NSObject {
             question.questionDate = object.createdAt!
             question.questionID = object.objectId!
             
-            question.child = question.child.fetchIfNeeded() as! PFUser
             
+            question.child.fetchIfNeededInBackgroundWithBlock({ (fetchUser, erro) -> Void in
+                
+            question.child = fetchUser as! PFUser
+            print(question.child)
             questions.append(question)
+            questionSize--
+                
+                if(questionSize == 0){
+                    print(questions)
+                completion(questions)
+                }
+                
+            })
             
-        }
+            }
      
-        
-      completion(questions)
     }
     
 }
