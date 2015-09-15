@@ -82,11 +82,14 @@ class ParseManager: NSObject {
     }
     
     
+
     class func findQuestions(completion: ([Questions])-> Void){
-    
+ 
+        // query serve como uma chave pra procurar nosso objetos no Parse
     let query = PFQuery(className: "questions")
-        query.whereKey("finished", equalTo: false)
+        query.whereKey("finished", equalTo: false) //busca apenas os objetos com o status de terminado (finished = false)
         query.orderByAscending("createdAt")
+        
         query.findObjectsInBackgroundWithBlock {(objects: [AnyObject]?, error: NSError?) -> Void in
             
             if error == nil {

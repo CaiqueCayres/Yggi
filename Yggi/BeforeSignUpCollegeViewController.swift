@@ -34,9 +34,11 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
             
         //apos encontrar as perguntas no Parse comeco a buscar as imagens de cada pergunta
             for quests in self.feedQuestions{
-                quests.questionImageData.getDataInBackgroundWithBlock({ (dataImage, erro) -> Void in
+    
+                    quests.questionImageData.getDataInBackgroundWithBlock({ (dataImage, erro) -> Void in
                     quests.questionImage = UIImage(data: dataImage!)!
                     self.universitariaView.reloadData()
+                    
                 })
             }
         }
@@ -74,8 +76,11 @@ class BeforeSignUpCollegeViewController: UIViewController,UICollectionViewDelega
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: screenWidth - 20, height: screenHeight / CGFloat(3))
+        
+        //Essa funcao precisa ser modificada pra aumentar ou diminuir o tamanho das sessoes da CollectionView de acordo com a imagem do array feedQuestions.questImage
+    return CGSize(width: screenWidth - 20, height: screenHeight/3)
     }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 8
     }
